@@ -8,7 +8,13 @@
 </head>
 <body>
 <h1>Welcome</h1>
-<%= link_to "Push Bullet","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000&response_type=token"%>
+
+<% if current_user%>
+<%= "Signed in as #{current_user.name}" %>
+<%= link_to "Sign out", signout_path %>
+<%else%>
+<%= link_to "Sign in With Facebook", 'auth/facebook' %>
+<% end%>
 <%= yield %>
 <!-- o.H9zIXmg6pbY1Tz3UaYTRr0ytpdRSB15y -->
 </body>

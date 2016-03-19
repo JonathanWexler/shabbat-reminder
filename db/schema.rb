@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319224004) do
+ActiveRecord::Schema.define(version: 20160319225038) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160319224004) do
     t.string   "pb_device_iden"
     t.string   "pb_access_token"
     t.string   "pb_device_type"
+    t.string   "image_url"
   end
 
 end

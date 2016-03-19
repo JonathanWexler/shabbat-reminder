@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/edit'
+  resources :users
 
   get 'sessions/new'
 
