@@ -191,7 +191,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sqlite3
-  timezone (~> 0.99)
+  timezone
   turbolinks
   uglifier (>= 1.3.0)
   washbullet
