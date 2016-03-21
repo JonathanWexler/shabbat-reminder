@@ -28,26 +28,15 @@
       ap c['access_token']
       current_user.pb_access_token = c['access_token']
       current_user.save
+
       sun_times = SunTimes.new
-      @time = sun_times.set(Date.new(2016, 3, 21), 39.9500, -75.1667)
+      @time = sun_times.set(Date.new(2016, 3, 25), 39.9500, -75.1667)
 
       timezone = Timezone.lookup(39.9500, -75.1667)
       puts "TIMEZONE IS #{timezone}"
-
-      date = Date.new(2016, 3, 21)
-      @time = SolarEventCalculator.new(date, 39.9500, -75.1667)
-
-# url = URI.parse("https://api.pushbullet.com/oauth2/token")
-# req = Net::HTTP::Get.new(url.path)
-# req.add_field("grant_type", "authorization_code")
-# req.add_field("client_id", ENV["PUSH_BULLET_CLIENT_ID"])
-# req.add_field("client_secret", ENV["PUSH_BULLET_CLIENT_SECRET"])
-# req.add_field("code", code)
-# Net::HTTP.start(uri.host, uri.port) do |http|
-#     request = Net::HTTP::Get.new uri
-
-#             response = http.request request # Net::HTTPResponse object
-#         end
+      @time = @time.in_time_zone(timezone.name).strftime("%B %d, %Y  %I:%M %p")
+      # date = Date.new(2016, 3, 21)
+      # @time = SolarEventCalculator.new(date, 39.9500, -75.1667)
 
 end
 
