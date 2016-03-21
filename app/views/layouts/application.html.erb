@@ -7,14 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Welcome</h1>
+  <nav>
+    <div class="container">
 
-<% if current_user%>
-<%= "Signed in as #{current_user.name}" %>
-<%= link_to "Sign out", signout_path %>
-<%else%>
-<%= link_to "Sign in With Facebook", 'auth/facebook' %>
-<% end%>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">|||</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><%= link_to(current_user.name, current_user) if current_user%></li>
+            <li><%= link_to("Set Reminders", current_user) if current_user%></li>
+            <li><%= link_to("Settings", current_user) if current_user%></li>
+            <li><%= link_to("Facebook Connect", current_user) if current_user%></li>
+                        <% if current_user%>
+            <li><%= link_to "Sign out", signout_path %></li>
+            <%else%>
+            <li><%= link_to "Sign in With Facebook", 'auth/facebook' %></li>
+            <% end%>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><%= link_to(current_user.name, current_user) if current_user%></li>
+            <li><%= link_to("Set Reminders", current_user) if current_user%></li>
+            <li><%= link_to("Settings", current_user) if current_user%></li>
+            <li><%= link_to("Facebook Connect", current_user) if current_user%></li>
+            <% if current_user%>
+            <li><%= link_to "Sign out", signout_path %></li>
+            <%else%>
+            <li><%= link_to "Sign in With Facebook", 'auth/facebook' %></li>
+            <% end%>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<h1>Welcome</h1>
 <%= yield %>
 <!-- o.H9zIXmg6pbY1Tz3UaYTRr0ytpdRSB15y -->
 </body>
