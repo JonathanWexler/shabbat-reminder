@@ -2,7 +2,17 @@
     <h1>Welcome</h1>
 
     <%= image_tag @user.image_url, class: "profile_image" %>
-    <%= link_to "Push Bullet","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fpush_bullet&response_type=code&scope=everything", class: "waves-effect waves-light btn pb_button"%>
+    <% if current_user.pb_registered? %>
+    <%= link_to "Update Push Bullet Settings","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fpush_bullet&response_type=code&scope=everything", class: "waves-effect waves-light btn pb_button"%>
+    <%else%>
+    <%= link_to "Authenticate Push Bullet","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fpush_bullet&response_type=code&scope=everything", class: "waves-effect waves-light btn pb_button"%>
+    <%end%>
+
+
+    <h1>Shabbat Starts at:</h1>
+
+    <%= content_tag :h1, " #{@time}" %>
+
 </div>
 
 <!-- <a ><i class="material-icons left">cloud</i>button</a> -->
