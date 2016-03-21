@@ -28,6 +28,9 @@ gem 'ruby-sun-times'
 gem 'washbullet'
 gem 'figaro'
 
+# ANOTHER SUNSET GEM
+gem 'RubySunrise'
+
 gem 'materialize-sass'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

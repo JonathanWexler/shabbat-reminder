@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    RubySunrise (0.3.1)
+      tzinfo
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
       actionview (= 4.2.5)
@@ -172,6 +174,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RubySunrise
   awesome_print
   byebug
   coffee-rails (~> 4.1.0)
