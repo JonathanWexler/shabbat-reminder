@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
 
   get 'sessions/new'
-  get '/push_bullet' => 'users#edit'
+  get '/push_bullet' => 'users#parse_pb_auth'
   get 'auth/:provider/callback' => 'sessions#create' 
   get 'auth/failure' => redirect('/')
   get 'signout' =>'sessions#destroy', as: 'signout'

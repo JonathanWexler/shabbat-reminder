@@ -12,4 +12,13 @@ class User < ActiveRecord::Base
         end
     end
 
+    def update_push_bullet
+        client = Washbullet::Client.new(self.pb_access_token)
+        ap client.devices
+    end
+
+    def pb_registered?
+        !pb_access_token.nil?
+    end
+
 end
