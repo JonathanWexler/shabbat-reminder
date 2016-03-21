@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Welcome</h1>
 
+<% if current_user%>
+<%= "Signed in as #{current_user.name}" %>
+<%= link_to "Sign out", signout_path %>
+<%else%>
+<%= link_to "Sign in With Facebook", 'auth/facebook' %>
+<% end%>
 <%= yield %>
-
+<!-- o.H9zIXmg6pbY1Tz3UaYTRr0ytpdRSB15y -->
 </body>
 </html>

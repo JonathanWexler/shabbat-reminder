@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317025121) do
+ActiveRecord::Schema.define(version: 20160319225038) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -20,11 +20,15 @@ ActiveRecord::Schema.define(version: 20160317025121) do
     t.float    "longitude"
     t.string   "provider"
     t.string   "uid"
-    t.string   "oath_token"
-    t.datetime "oath_expires_at"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.integer  "phone_number"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "pb_device_iden"
+    t.string   "pb_access_token"
+    t.string   "pb_device_type"
+    t.string   "image_url"
   end
 
 end

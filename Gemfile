@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'omniauth-facebook'
 gem 'ruby-sun-times'
+gem 'washbullet'
+gem 'figaro'
+
+gem 'materialize-sass'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -37,6 +41,7 @@ gem 'ruby-sun-times'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'awesome_print'
 end
 
 group :development do
