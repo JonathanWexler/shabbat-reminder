@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 gem 'ruby-sun-times'
 gem 'washbullet'
 gem 'figaro'
+gem 'timezone', '~> 0.99'
 
 # ANOTHER SUNSET GEM
 gem 'RubySunrise'

@@ -2,6 +2,6 @@
 <p>Find me in app/views/users/edit.html.erb</p>
 
 
-<%= content_tag :h1, "TIME OF SUNSET UTC IS: #{@time}" %>
-<%= content_tag :h1, "TIME OF SUNSET IS: #{@time.in_time_zone("Eastern Time (US & Canada)")}" %>
+<%= content_tag :h1, " #{@time.compute_utc_official_sunset.in_time_zone("Eastern Time (US & Canada)")}" %>
+
 <%= "#{Time.now.in_time_zone("Eastern Time (US & Canada)")}" %>

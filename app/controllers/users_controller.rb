@@ -1,5 +1,6 @@
     require 'net/http'
     require 'sun_times'
+    require 'solareventcalculator'
 
     class UsersController < ApplicationController
       def edit
@@ -28,6 +29,9 @@
       current_user.save
       sun_times = SunTimes.new
       @time = sun_times.set(Date.new(2016, 3, 21), 39.9500, 75.1667)
+
+      date = Date.new(2016, 3, 21)
+      @time = SolarEventCalculator.new(date, 39.9500, 75.1667)
 
 # url = URI.parse("https://api.pushbullet.com/oauth2/token")
 # req = Net::HTTP::Get.new(url.path)
