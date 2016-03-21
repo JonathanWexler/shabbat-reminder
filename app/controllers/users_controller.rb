@@ -28,6 +28,9 @@
           ap c['access_token']
           current_user.pb_access_token = c['access_token']
           current_user.save
+
+          current_user.update_push_bullet
+
           redirect_to current_user
       end
 
