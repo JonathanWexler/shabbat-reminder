@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160319225038) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.integer  "phone_number"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "phone_number",     limit: 8
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "pb_device_iden"
     t.string   "pb_access_token"
     t.string   "pb_device_type"
