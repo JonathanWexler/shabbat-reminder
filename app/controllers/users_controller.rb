@@ -1,9 +1,10 @@
     require 'net/http'
-    require 'sun_times'
-    require 'solareventcalculator'
-    require 'timezone'
 
     class UsersController < ApplicationController
+
+        def settings
+            
+        end
 
         def parse_pb_auth
             code = params[:code]
@@ -36,18 +37,14 @@
 
       def edit
 
-          sun_times = SunTimes.new
-          @time = sun_times.set(Date.new(2016, 3, 25), 39.9500, -75.1667)
 
-          timezone = Timezone.lookup(39.9500, -75.1667)
-          puts "TIMEZONE IS #{timezone}"
-          @time = @time.in_time_zone(timezone.name).strftime("%B %d, %Y  %I:%M %p")
       # date = Date.new(2016, 3, 21)
       # @time = SolarEventCalculator.new(date, 39.9500, -75.1667)
 
   end
 
   def show
+      get_sunset
       @user = User.find(params[:id])
   end
 end

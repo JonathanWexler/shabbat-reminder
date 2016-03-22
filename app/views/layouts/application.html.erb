@@ -27,7 +27,7 @@
         <ul class="side-nav" id="mobile-demo">
             <li><%= link_to(current_user.name, current_user) if current_user%></li>
             <li><%= link_to("Set Reminders", current_user) if current_user%></li>
-            <li><%= link_to("Settings", current_user) if current_user%></li>
+            <li><%= link_to("Settings", user_settings_path(current_user)) if current_user%></li>
             <li><%= link_to("Facebook Connect", current_user) if current_user%></li>
             <% if current_user%>
             <li><%= link_to "Sign out", signout_path %></li>
