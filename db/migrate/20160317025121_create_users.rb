@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid
       t.string :oath_token
       t.datetime :oath_expires_at
-      t.integer :phone_number
+      t.integer :phone_number, :limit => 8
 
       t.timestamps null: false
     end

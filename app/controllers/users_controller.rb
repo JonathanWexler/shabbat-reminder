@@ -3,7 +3,7 @@
     class UsersController < ApplicationController
 
         def settings
-            
+
         end
 
         def parse_pb_auth
@@ -42,9 +42,20 @@
       # @time = SolarEventCalculator.new(date, 39.9500, -75.1667)
 
   end
+  def update
+    ap params.inspect
+    current_user.update_attributes(user_params)
+    redirect_to user_settings_path(current_user)
+  end
 
   def show
       get_sunset
       @user = User.find(params[:id])
+  end
+
+  private
+
+  def user_params
+      params.require(:user).permit(:name, :email, :phone_number)
   end
 end
