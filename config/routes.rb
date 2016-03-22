@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :users
   get 'users/:id/settings' => 'users#settings', as: :user_settings
+  get 'users/:id/reminders' => 'users#reminders', as: :user_reminders
   get 'sessions/new'
   get '/push_bullet' => 'users#parse_pb_auth'
+
+  get '/users/:id/set_reminders' => 'users#set_reminders', as: :set_reminder
   get 'auth/:provider/callback' => 'sessions#create' 
   get 'auth/failure' => redirect('/')
   get 'signout' =>'sessions#destroy', as: 'signout'

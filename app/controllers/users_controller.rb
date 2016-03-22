@@ -49,8 +49,38 @@
   end
 
   def show
-      get_sunset
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+      @time = get_sunset
+      @user.reminder.upcoming_date = @time
+      @user.reminder.save
+      @time = @time.strftime("%B %d, %Y  %I:%M %p")
+      
+  end
+
+  def reminders
+      puts "PRAMS ARE: #{params}"
+  end  
+  def set_reminders
+      puts "PRAMS ARE: #{params}"
+      @r = params[:id]
+      @make_true = true
+      case @r
+          when '10'
+             puts @make_true = current_user.reminder.first = !current_user.reminder.first
+             current_user.reminder.save
+            print "10 command: #{@r}"
+          when '20'
+             @make_true = current_user.reminder.second = !current_user.reminder.second
+             current_user.reminder.save
+            print "20 command: #{@r}"
+          when '30'
+             @make_true = current_user.reminder.third = !current_user.reminder.third
+             current_user.reminder.save
+            print "30 command: #{@r}"
+        else
+            print "Illegal command: #{@r}"
+        end
+        current_user.send_message(@r)
   end
 
   private

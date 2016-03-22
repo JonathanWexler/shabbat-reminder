@@ -1,0 +1,50 @@
+<%if current_user.reminder.first %>
+<%= link_to "10 Minutes", set_reminder_path(10), class: "waves-effect  indigo accent-4 btn pb_button  green darken-1", remote: :true, id: '10-reminder' %>
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel green darken-1">
+      <div class="white-text centered">    
+        <%= make_it_clear(current_user.reminder.upcoming_date-600)%>
+    </div>
+</div>
+</div>
+</div>
+
+<%else %>
+
+<%= link_to "10 Minutes", set_reminder_path(10), class: "waves-effect  indigo accent-4 btn pb_button ", remote: :true, id: '10-reminder' %><br><br>
+<%end %>
+<%if current_user.reminder.second %>
+
+<%= link_to "20 Minutes", set_reminder_path(20), class: "waves-effect  indigo accent-4 btn pb_button  green darken-1", remote: :true, id: '20-reminder' %>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel green darken-1">
+      <div class="white-text centered">    
+        <%= make_it_clear(current_user.reminder.upcoming_date-1200)%>
+    </div>
+</div>
+</div>
+</div>
+<%else %>
+
+<%= link_to "20 Minutes", set_reminder_path(20), class: "waves-effect  indigo accent-4 btn pb_button", remote: :true, id: '20-reminder' %><br><br>
+<%end %>
+<%if current_user.reminder.third %>
+
+<%= link_to "30 Minutes", set_reminder_path(30), class: "waves-effect  indigo accent-4 btn pb_button  green darken-1", remote: :true, id: '30-reminder' %>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel green darken-1">
+      <div class="white-text centered">    
+        <%= make_it_clear(current_user.reminder.upcoming_date-1800)%>
+    </div>
+</div>
+</div>
+</div>
+<%else %>
+
+<%= link_to "30 Minutes", set_reminder_path(30), class: "waves-effect  indigo accent-4 btn pb_button", remote: :true, id: '30-reminder' %><br><br>
+<%end %>

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
       timezone = Timezone.lookup(39.9500, -75.1667)
       puts "TIMEZONE IS #{timezone}"
-      @time = @time.in_time_zone(timezone.name).strftime("%B %d, %Y  %I:%M %p")
+      @time = @time.in_time_zone(timezone.name)
   end
 
   private
