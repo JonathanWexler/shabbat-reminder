@@ -53,6 +53,13 @@
       @user = User.find(params[:id])
   end
 
+  def reminders
+      puts "PRAMS ARE: #{params}"
+  end  
+  def set_reminders
+      puts "PRAMS ARE: #{params}"
+  end
+
   private
 
   def user_params
