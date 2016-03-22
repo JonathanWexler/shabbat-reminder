@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first: false
+  second: false
+  third: false
+  user_id: 1
+  upcoming_date: 2016-03-21 23:10:15
+
+two:
+  first: false
+  second: false
+  third: false
+  user_id: 1
+  upcoming_date: 2016-03-21 23:10:15
