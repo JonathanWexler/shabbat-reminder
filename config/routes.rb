@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-
+  get 'users/:id/settings' => 'users#settings', as: :user_settings
   get 'sessions/new'
   get '/push_bullet' => 'users#parse_pb_auth'
   get 'auth/:provider/callback' => 'sessions#create' 

@@ -15,6 +15,15 @@ class User < ActiveRecord::Base
     def update_push_bullet
         client = Washbullet::Client.new(self.pb_access_token)
         ap client.devices
+        client.devices.each do |device|
+            d = device.body
+            if d['type'] == 'ios'
+                ap "YES IT'S N IPHONE"
+                self.pb_device_type = d['type']
+                self.pb_device_iden = d['iden']
+            end
+        end
+        self.save
     end
 
     def pb_registered?

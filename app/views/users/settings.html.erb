@@ -1,22 +1,18 @@
-<div class="image_container">
-    <h3 class="centered"><%= current_user.name%></h3>
+    <%= content_tag :h1, "Settings" %>
 
-    <%= image_tag @user.image_url, class: "profile_image" %>
+<br>
+<br>
+<br>
+<%= render 'form'%>
+<br>
+<br>
     <% if current_user.pb_registered? %>
     <%= link_to "Update Push Bullet Settings","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fpush_bullet&response_type=code&scope=everything", class: "waves-effect waves-light btn pb_button"%>
     <%else%>
     <%= link_to "Authenticate Push Bullet","https://www.pushbullet.com/authorize?client_id=ILJH5bOPw4bt1tKMnHk8Olc6M6SEL1kt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fpush_bullet&response_type=code&scope=everything", class: "waves-effect waves-light btn pb_button"%>
     <%end%>
-</div>
-<div class="row centered">
-    <div class="col s12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Shabbat Starts at:</span>
-          <%= content_tag :h1, " #{@time}" %>
-      </div>
-  </div>
-</div>
-</div>
 
-<!-- <a ><i class="material-icons left">cloud</i>button</a> -->
+    
+<br>
+<br>
+<%= link_to "Update with Facebook",'auth/facebook', class: "waves-effect  indigo accent-4 btn pb_button"%>
